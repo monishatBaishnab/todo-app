@@ -1,0 +1,82 @@
+[
+    {
+        "brand": "Samsung",
+        "name": "Galaxy S22 Ultra",
+        "price": 1299.99,
+        "type": "Flagship",
+        "processor": "Octa-core Exynos 2200",
+        "memory": 12,
+        "storage": {
+            "internal": 256,
+            "expandable": true
+        },
+        "os": "Android 13",
+        "description": "Discover the power of innovation with the Galaxy S22 Ultra. Its advanced camera system, coupled with the powerful Exynos 2200 processor, delivers exceptional performance and unrivaled photography capabilities.",
+        "image": "https://i.ibb.co/1XFxhHM/Galaxy-S22-Ultra.png"
+    },
+    {
+        "brand": "Apple",
+        "name": "iPhone 14 Pro Max",
+        "price": 1399.99,
+        "type": "Flagship",
+        "processor": "Hexa-core A16 Bionic",
+        "memory": 8,
+        "storage": {
+            "internal": 512,
+            "expandable": false
+        },
+        "os": "iOS 16",
+        "description": "Experience the epitome of luxury and performance with the iPhone 14 Pro Max. The A16 Bionic chip powers incredible features, while the Pro camera system captures moments in stunning detail.",
+        "image": "https://i.ibb.co/Bf7v0JP/i-Phone-14-Pro-Max.png"
+    },
+    {
+        "brand": "Google",
+        "name": "Pixel 7 Pro",
+        "price": 899.99,
+        "type": "Flagship",
+        "processor": "Octa-core Google Tensor",
+        "memory": 8,
+        "storage": {
+            "internal": 128,
+            "expandable": false
+        },
+        "os": "Android 14",
+        "description": "Elevate your mobile experience with the Pixel 7 Pro. The Google Tensor processor enables AI-driven capabilities, and the advanced camera system delivers exceptional photo and video quality.",
+        "image": "https://i.ibb.co/nnTPyXD/Pixel-7-Pro.jpg"
+    },
+    {
+        "brand": "OnePlus",
+        "name": "OnePlus 10",
+        "price": 999.99,
+        "type": "Flagship",
+        "processor": "Octa-core Snapdragon 8 Gen 2",
+        "memory": 12,
+        "storage": {
+            "internal": 256,
+            "expandable": true
+        },
+        "os": "OxygenOS based on Android 14",
+        "description": "Unleash uncompromising speed and style with the OnePlus 10. The Snapdragon 8 Gen 2 processor ensures seamless performance, while the sleek design reflects the brand's commitment to innovation.",
+        "image": "https://i.ibb.co/CBCDwGh/One-Plus-10.png"
+    },
+    {
+        "brand": "Xiaomi",
+        "name": "Mi 12",
+        "price": 899.99,
+        "type": "Flagship",
+        "processor": "Octa-core Snapdragon 8cx",
+        "memory": 10,
+        "storage": {
+            "internal": 256,
+            "expandable": false
+        },
+        "os": "MIUI based on Android 13",
+        "description": "Experience the future of mobile technology with the Mi 12. Powered by the Snapdragon 8cx, this flagship device delivers unparalleled performance, coupled with a cutting-edge design.",
+        "image": "https://i.ibb.co/xLwthKg/Mi-12.png"
+    }
+]
+
+
+
+
+
