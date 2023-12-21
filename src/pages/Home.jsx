@@ -1,18 +1,11 @@
-import ProductsContainer from "../components/Home/ProductsContainer";
+import HomeBanner from "../components/Home/HomeBanner/HomeBanner";
+import TodoContainer from "../components/Home/TodoContainer/TodoContainer";
 
 const Home = () => {
+    const user = true;
     return (
-        <div className="">
-            <div className="container grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                <div className="">
-                    <div>
-                        Lorem ipsum dolor sit amet.
-                    </div>
-                </div>
-                <div className="col-span-1 md:col-span-2 lg:col-span-3">
-                    <ProductsContainer />
-                </div>
-            </div>
+        <div>
+            {user ? <TodoContainer /> : <HomeBanner />}
         </div>
     );
 };
