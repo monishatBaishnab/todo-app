@@ -1,11 +1,11 @@
 import HomeBanner from "../components/Home/HomeBanner/HomeBanner";
-import TodoContainer from "../components/Home/TodoContainer/TodoContainer";
+import TaskContainer from "../components/Home/TaskContainer/TaskContainer";
 
 const Home = () => {
     const user = true;
     return (
         <div>
-            {user ? <TodoContainer /> : <HomeBanner />}
+            {user ? <TaskContainer /> : <HomeBanner />}
         </div>
     );
 };
