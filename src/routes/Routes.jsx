@@ -4,6 +4,9 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import ErrorPage from "../pages/ErrorPage";
 import MainLayout from "../layouts/MainLayout";
+import AddTask from "../pages/AddTask";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Profile from "../pages/Profile";
 
 const Routes = createBrowserRouter([
     {
@@ -14,6 +17,14 @@ const Routes = createBrowserRouter([
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: 'add-task',
+                element: <PrivateRoute><AddTask /></PrivateRoute>
+            },
+            {
+                path: 'profile',
+                element: <PrivateRoute><Profile /></PrivateRoute>
             }
         ]
     },

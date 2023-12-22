@@ -2,13 +2,13 @@ import { Button, Dialog, DialogBody, IconButton, Input, Option, Select, SpeedDia
 import { FaCheckToSlot, FaPlus } from "react-icons/fa6";
 import { MdDelete, MdDescription, MdEdit } from "react-icons/md";
 import PropTypes from 'prop-types';
-import { CgSpinnerTwo } from "react-icons/cg";
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
 const TaskActions = ({ pending, actions, task, refetch }) => {
-    const { complateTask, deleteTask, loading} = actions || {};
+    const { complateTask, deleteTask} = actions || {};
+    const { pendingTaskRefetch, complatedTaskRefetch } = refetch || {};
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(!open);
     const [priority, setPriority] = useState(task?.priority);
@@ -16,7 +16,6 @@ const TaskActions = ({ pending, actions, task, refetch }) => {
     const [dialogOpen, setDialogOpen] = useState(false);
     const handleEditDialogOpen = () => setDialogOpen(!dialogOpen);
 
-    const { pendingTaskRefetch, complatedTaskRefetch } = refetch || {};
 
     const editTask = async (e) => {
         e.preventDefault();
@@ -34,7 +33,7 @@ const TaskActions = ({ pending, actions, task, refetch }) => {
             status: task?.status
         }
         try {
-            await axios.put(`http://localhost:5000/tasks/${task._id}`, newTask);
+            await axios.put(`https://todo-app-server-cyan.vercel.app/tasks/${task._id}`, newTask);
             handleEditDialogOpen();
             task?.status === 'pending' ? pendingTaskRefetch() : complatedTaskRefetch();
             toast.success('Success');
@@ -50,7 +49,7 @@ const TaskActions = ({ pending, actions, task, refetch }) => {
             <SpeedDial placement="left">
                 <SpeedDialHandler>
                     <IconButton size="lg" className="rounded-full bg-primary">
-                        {loading ? <CgSpinnerTwo className="animate-spin" /> : <FaPlus className="h-5 w-5 transition-transform group-hover:rotate-45" />}
+                        <FaPlus className="h-5 w-5 transition-transform group-hover:rotate-45" />
                     </IconButton>
                 </SpeedDialHandler>
                 <SpeedDialContent className="flex-row bg-primary/10 rounded-full">

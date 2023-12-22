@@ -7,6 +7,9 @@ module.exports = withMT({
       colors: {
         'primary': '#425A8B',
         'secondery': '#D5DFE4'
+      },
+      backgroundImage: {
+        'hero': "url('https://i.ibb.co/bzJXdZB/sigmund-4-UGmm3-WRUo-Q-unsplash.jpg')"
       }
     },
   },
