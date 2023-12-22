@@ -4,18 +4,18 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const AddTask = () => {
     const { user } = useContext(AuthContext);
     const [priority, setPriority] = useState('');
     const navigate = useNavigate();
+    const {register, handleSubmit} = useForm();
 
-    const addTask = async (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const title = form.title.value;
-        const deadline = form.deadline.value;
-        const description = form.description.value;
+    const addTask = async (data) => {
+        const title = data.title;
+        const deadline = data.deadline;
+        const description = data.description;
         // console.log({title, deadline, description, priority});
         const newTask = {
             userId: user?.uid,
@@ -38,18 +38,18 @@ const AddTask = () => {
         <div>
             <div className="container">
                 <Typography variant="h3" className="text-center">Enrich Your Schedule</Typography>
-                <form className="space-y-3 max-w-lg mx-auto" onSubmit={addTask}>
+                <form className="space-y-3 max-w-lg mx-auto" onSubmit={handleSubmit(addTask)}>
                     <div className="space-y-2">
                         <Typography variant="h6" color="blue-gray" className="font-medium"> Title </Typography>
-                        <Input name="title" size="lg" placeholder="Todo Title" className=" !border-t-blue-gray-200 focus:!border-t-primary focus:border-primary" labelProps={{ className: "before:content-none after:content-none", }} />
+                        <Input {...register('title')} name="title" size="lg" placeholder="Todo Title" className=" !border-t-blue-gray-200 focus:!border-t-primary focus:border-primary" labelProps={{ className: "before:content-none after:content-none", }} />
                     </div>
                     <div className="space-y-2">
                         <Typography variant="h6" color="blue-gray" className="font-medium"> Deadline </Typography>
-                        <Input name="deadline" size="lg" placeholder="Todo Deadline / yy-mm-dd" className=" !border-t-blue-gray-200 focus:!border-t-primary focus:border-primary" labelProps={{ className: "before:content-none after:content-none", }} />
+                        <Input {...register('deadline')} name="deadline" size="lg" placeholder="Todo Deadline / yy-mm-dd" className=" !border-t-blue-gray-200 focus:!border-t-primary focus:border-primary" labelProps={{ className: "before:content-none after:content-none", }} />
                     </div>
                     <div className="space-y-2">
                         <Typography variant="h6" color="blue-gray" className="font-medium"> Description </Typography>
-                        <Textarea name="description" size="lg" placeholder="Todo Description" className=" !border-t-blue-gray-200 focus:!border-t-primary focus:border-primary" labelProps={{ className: "before:content-none after:content-none", }} />
+                        <Textarea {...register('description')} name="description" size="lg" placeholder="Todo Description" className=" !border-t-blue-gray-200 focus:!border-t-primary focus:border-primary" labelProps={{ className: "before:content-none after:content-none", }} />
                     </div>
                     <div className="space-y-2">
                         <Typography variant="h6" color="blue-gray" className="font-medium"> Priority </Typography>
