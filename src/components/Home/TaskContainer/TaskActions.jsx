@@ -62,7 +62,7 @@ const TaskActions = ({ pending, actions, task, refetch }) => {
                     <SpeedDialAction onClick={handleEditDialogOpen} className="hover:text-primary">
                         <MdEdit className="text-xl" />
                     </SpeedDialAction>
-                    <SpeedDialAction onClick={() => deleteTask(task)} className="hover:text-primary">
+                    <SpeedDialAction onClick={() => deletetasTask(task)} className="hover:text-primary">
                         <MdDelete className="text-xl" />
                     </SpeedDialAction>
                     <SpeedDialAction onClick={handleOpen} className="hover:text-primary">
