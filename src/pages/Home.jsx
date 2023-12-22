@@ -5,6 +5,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import UserBenifits from "../components/Home/HomeBanner/UserBenifits";
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import Footer from "../components/Shared/Footer/Footer";
 
 const Home = () => {
     const { user } = useContext(AuthContext);
